@@ -14,10 +14,7 @@ import { useParams, useLocation } from 'react-router-dom';
 export default function Dashboard() {
   const { folderId } = useParams();
   const { state = {} } = useLocation();
-  const [FolderState, handleDeleteFile, handleDeleteFolder] = useFolder(
-    folderId,
-    state.folder
-  );
+  const [FolderState, handleDeleteFile] = useFolder(folderId, state.folder);
   const { folder, childFolders, childFiles } = FolderState;
   return (
     <>
@@ -37,7 +34,7 @@ export default function Dashboard() {
                   key={folder.id}
                   style={{ maxWidth: '250px' }}
                   className='p-2'>
-                  <Folder folder={folder} handleDelete={handleDeleteFolder} />
+                  <Folder folder={folder} />
                 </div>
               );
             })}

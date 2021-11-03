@@ -8,9 +8,7 @@ import {
   query,
   where,
   updateDoc,
-  getDoc,
   getDocs,
-  doc,
 } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { useAuth } from '../../context/AuthContext';

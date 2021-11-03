@@ -5,7 +5,6 @@ import {
   getDoc,
   query,
   where,
-  orderBy,
   onSnapshot,
   deleteDoc,
 } from 'firebase/firestore';
@@ -98,7 +97,6 @@ export function useFolder(folderId = null, folder = null) {
       db.files,
       where('folderId', '==', folderId),
       where('userId', '==', currentUser.uid)
-      //   orderBy('createdAt')
     );
 
     return onSnapshot(q, qSnapShot => {
@@ -118,16 +116,6 @@ export function useFolder(folderId = null, folder = null) {
       console.log(err);
     }
   };
-  const handleDeleteFolder = async folder => {
-    try {
-      //deleting all the files inside the folder
-      //   const fileRef = ref(storage, file.path);
-      //   await deleteObject(fileRef);
-      //   await deleteDoc(doc(db.files, file.id));
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
-  return [state, handleDeleteFile, handleDeleteFolder];
+  return [state, handleDeleteFile];
 }
