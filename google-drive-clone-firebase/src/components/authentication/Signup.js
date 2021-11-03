@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Alert, Button, Card, Form } from 'react-bootstrap';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import { CenterContainer } from '..';
 
 export default function Signup() {
   const emailRef = useRef(null);
@@ -21,14 +22,14 @@ export default function Signup() {
       setError('');
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      history.push('/');
+      history.push('/user');
     } catch {
       setError('failed to create an account');
     }
     setLoading(false);
   };
   return (
-    <>
+    <CenterContainer>
       <Card>
         <Card.Body>
           <h2 className='text-center mb-4'>Sign up</h2>
@@ -55,6 +56,6 @@ export default function Signup() {
       <div className='w-100 text-center mt-2'>
         already have an account? <Link to='/login'>Log in</Link>
       </div>
-    </>
+    </CenterContainer>
   );
 }
