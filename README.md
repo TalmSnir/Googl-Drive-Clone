@@ -1,7 +1,7 @@
 
 # Google Drive clone
 
-Manage files and folders using firebase authentication with Cloud firestore and Storage as backend for the sake of learning firebase API and getting familiar with handling databases and authentication. 
+Manage files and folders using firebase authentication with Cloud firestore and Storage as a backend for the sake of learning firebase API and getting familiar with handling databases and authentication. 
 
 
 
