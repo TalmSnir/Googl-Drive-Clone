@@ -8,7 +8,7 @@ Manage files and folders using firebase authentication with Cloud firestore and 
 
 ## live project
 
-[Google Drive clone - live demo](https://google-drive-clone-firebase.netlify.app/login)
+[Google Drive clone - live demo](https://google-drive-clone-firebase.netlify.app/)
 
 
 ## Features
